@@ -1,0 +1,14 @@
+build/
+*.o
+*.a
+*.so
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+.DS_Store
+.vs/
+*.sln
+*.vcxproj*
+html/
+latex/
