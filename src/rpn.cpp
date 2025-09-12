@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <stack>
 #include <string>
+#include <cmath>
 
 double evaluate_rpn(const std::string& expression) {
     std::stack<double> stack;
@@ -34,6 +35,24 @@ double evaluate_rpn(const std::string& expression) {
             if (b == 0) throw std::invalid_argument("Division by zero");
             double a = stack.top(); stack.pop();
             stack.push(a / b);
+        }
+        else if (token == "sin") {
+            if (stack.empty()) throw std::invalid_argument("Not enough operands for 'sin'");
+            double a = stack.top(); stack.pop();
+            stack.push(std::sin(a));
+        }
+        else if (token == "cos") {
+            if (stack.empty()) throw std::invalid_argument("Not enough operands for 'cos'");
+            double a = stack.top(); stack.pop();
+            stack.push(std::cos(a));
+        }
+        else if (token == "tan") {
+            if (stack.empty()) throw std::invalid_argument("Not enough operands for 'tan'");
+            double a = stack.top(); stack.pop();
+            stack.push(std::tan(a));
+        }
+        else if (token == "pi") {
+            stack.push(3.14159265358979323846);
         }
         else {
             try {

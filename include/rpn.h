@@ -11,3 +11,13 @@
  * contains an unknown operator, or attempts division by zero.
  */
 double evaluate_rpn(const std::string& expression);
+#pragma once
+#include <string>
+#include <cmath>
+
+double evaluate_rpn(const std::string& expression);
+
+// دوال رياضية إضافية
+double rpn_sin(double angle);
+double rpn_cos(double angle); 
+double rpn_tan(double angle);
